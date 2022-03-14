@@ -1,5 +1,7 @@
-import pygame, player, settings
+import pygame, player, settings, globals
+
 from tiles import Tile
+from globals import *
 
 class Level():
     def __init__(self, level_data, surface):

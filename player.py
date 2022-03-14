@@ -1,4 +1,4 @@
-import pygame, engine, settings
+import pygame, engine, settings, globals
 
 colours = engine.Colours()
 
@@ -15,9 +15,11 @@ class Player(pygame.sprite.Sprite):
         keys = pygame.key.get_pressed()
 
         if keys[pygame.K_RIGHT] or keys[pygame.K_d]:
-            self.direction.x = 1
+            print(globals.dt)
+            self.direction.x = 1 * globals.dt
         elif keys[pygame.K_LEFT] or keys[pygame.K_a]:
-            self.direction.x = -1
+            print(globals.dt)
+            self.direction.x = -1 * globals.dt
         else:
             self.direction.x = 0
 

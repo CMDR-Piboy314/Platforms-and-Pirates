@@ -1,4 +1,4 @@
-import pygame, engine
+import pygame, engine, globals
 
 colours = engine.Colours()
 

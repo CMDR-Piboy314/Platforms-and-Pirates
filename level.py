@@ -36,7 +36,11 @@ class Level():
             self.scroll[0] = settings.player_speed
             player.speed = 0
 
-        elif player_x > (settings.WINDOW_SIZE[0] - (settings.WINDOW_SIZE[0] / 4)) and direction_x > 0:
+        elif player_x >= settings.WINDOW_SIZE[0] - (settings.WINDOW_SIZE[0] / 4) and direction_x > 0:
+            print(player_x)
+            if player_x > settings.WINDOW_SIZE[0] - (settings.WINDOW_SIZE[0] / 4):
+                print("Setting it back")
+                player_x = settings.WINDOW_SIZE[0] - (settings.WINDOW_SIZE[0] / 4)
             self.scroll[0] = -settings.player_speed
             player.speed = 0
 
@@ -44,10 +48,38 @@ class Level():
             self.scroll[0] = 0
             player.speed = settings.player_speed
 
+    def horiz_movement_coll(self):
+        player = self.player.sprite
+        player.rect.x += player.direction.x * player.speed
+
+        for sprite in self.tiles.sprites():
+            if sprite.rect.colliderect(player.rect):
+                if player.direction.x < 0:
+                    player.rect.left = sprite.rect.right
+
+                elif player.direction.x > 0:
+                    player.rect.right = sprite.rect.left
+
+    def vert_movement_coll(self):
+        player = self.player.sprite
+        player.apply_gravity()
+
+        for sprite in self.tiles.sprites():
+            if sprite.rect.colliderect(player.rect):
+                if player.direction.y > 0:
+                    player.rect.top = sprite.rect.bottom
+
+                elif player.direction.y < 0:
+                    player.rect.bottom = sprite.rect.top
+
     def run(self):
+        # Tiles stuff
         self.tiles.update(self.scroll)
+        self.scroll_x()
         self.tiles.draw(self.display_surface)
 
+        # Player stuff
         self.player.update()
+        self.horiz_movement_coll()
+        self.vert_movement_coll()
         self.player.draw(self.display_surface)
-        self.scroll_x()

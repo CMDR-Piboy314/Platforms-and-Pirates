@@ -29,7 +29,7 @@ while True:
     # Calculate Delta Time
     globals.dt = time.time() - last_time
     globals.dt *= 60 # Multiply our delta time by FPS_MAX so we can measure in pixels per second instead of pixels per frame which is frame rate dependant
-    print(globals.dt)
+    #print(globals.dt)
     last_time = time.time()
 
     # Get events (mouse click, keyboard press)

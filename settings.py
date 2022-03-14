@@ -1,15 +1,15 @@
 level_map = [
-"                ",
-"      XXX       ",
-"   XXX          ",
-" XX    XXX      ",
-" XX           XX",
-" XXXX       XX  ",
-" XXXX  X  XXXX  ",
-" XX    X  XXXX  ",
-"    XXXX  XXXXXX",
-"XXXXXXXX  XXXXXX",
-]
+'                            ',
+'                            ',
+'                            ',
+' XX    XXX            XX    ',
+' XX P                       ',
+' XXXX         XX         XX ',
+' XXXX       XX              ',
+' XX    X  XXXX    XX  XX    ',
+'       X  XXXX    XX  XXX   ',
+'    XXXX  XXXXXX  XX  XXXX  ',
+'XXXXXXXX  XXXXXX  XX  XXXX  ']
 
 tile_size = 64
-SCREEN_SIZE = (1200, len(level_map) * tile_size)
+WINDOW_SIZE = (1200, len(level_map) * tile_size)

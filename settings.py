@@ -12,4 +12,5 @@ level_map = [
 'XXXXXXXX  XXXXXX  XX  XXXX  ']
 
 tile_size = 64
+player_speed = 8
 WINDOW_SIZE = (1200, len(level_map) * tile_size)

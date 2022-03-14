@@ -9,5 +9,5 @@ class Tile(pygame.sprite.Sprite):
         self.image.fill(colours.GREY)
         self.rect = self.image.get_rect(topleft = pos)
 
-    def update(self, x_scroll):
-        self.rect.x += x_scroll
+    def update(self, scroll):
+        self.rect.x += scroll[0]

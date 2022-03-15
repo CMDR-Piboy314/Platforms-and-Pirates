@@ -1,3 +1,4 @@
+# Beautiful Spaghetti code 🍝
 import pygame
 
 from tiles import Tile

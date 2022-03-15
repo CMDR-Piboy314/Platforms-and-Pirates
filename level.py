@@ -237,7 +237,7 @@ class Level:
         self.grass_sprites.update(self.world_shift)
         self.grass_sprites.draw(self.display_surface)
 
-        # coins
+        # Coins
         self.coin_sprites.update(self.world_shift)
         self.coin_sprites.draw(self.display_surface)
 

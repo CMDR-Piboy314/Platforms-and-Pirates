@@ -3,6 +3,7 @@ import pygame, sys, engine, time
 
 from tiles import Tile
 from level import Level
+from game_data import level_0
 from settings import *
 
 # Define Constants
@@ -18,8 +19,8 @@ pygame.display.set_caption("Platforms and Pirates")
 
 # Create instances
 clock = pygame.time.Clock() # Create a clock for framerate capping and ticks
+level = Level(level_0, screen)
 colours = engine.Colours()
-level = Level(level_map, screen)
 
 # Game loop
 while True:

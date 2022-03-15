@@ -262,5 +262,5 @@ class Level:
         self.goal.update(self.world_shift)
         self.goal.draw(self.display_surface)
 
-        # water
+        # Water
         self.water.draw(self.display_surface,self.world_shift)

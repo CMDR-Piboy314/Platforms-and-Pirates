@@ -18,7 +18,7 @@ pygame.mixer.music.set_volume(0.7)
 # Create classes
 class Game:
     def __init__(self):
-        self.max_level = 6
+        self.max_level = 3
         self.overworld = overworld.Overworld(0, self.max_level, screen)
 
     def run(self):

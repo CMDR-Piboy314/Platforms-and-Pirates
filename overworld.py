@@ -23,9 +23,10 @@ class Overworld:
     def setup_nodes(self):
         self.nodes = pygame.sprite.Group()
 
-        for node_data in levels.values():
-            node_sprite = Node(node_data["node_pos"])
-            self.nodes.add(node_sprite)
+        for index, node_data in enumerate(levels.values()):
+            if index <= self.max_level:
+                node_sprite = Node(node_data["node_pos"])
+                self.nodes.add(node_sprite)
 
     def run(self):
         self.nodes.draw(self.display_surface)

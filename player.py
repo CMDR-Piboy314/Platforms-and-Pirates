@@ -2,23 +2,23 @@ import pygame
 from engine import import_folder
 
 class Player(pygame.sprite.Sprite):
-    def __init__(self,pos,surface,create_jump_particles):
+    def __init__(self, pos, surface, create_jump_particles):
         super().__init__()
         self.import_character_assets()
         self.frame_index = 0
-        self.animation_speed = 0.15
+        self.animation_speed = 0.1
         self.image = self.animations["idle"][self.frame_index]
         self.rect = self.image.get_rect(topleft = pos)
 
         # Dust
         self.import_dust_run_particles()
         self.dust_frame_index = 0
-        self.dust_animation_speed = 0.15
+        self.dust_animation_speed = 0.1
         self.display_surface = surface
         self.create_jump_particles = create_jump_particles
 
         # Player movement
-        self.direction = pygame.math.Vector2(0,0)
+        self.direction = pygame.math.Vector2(0, 0)
         self.speed = 8
         self.gravity = 0.8
         self.jump_speed = -16
@@ -80,7 +80,7 @@ class Player(pygame.sprite.Sprite):
             dust_particle = self.dust_run_particles[int(self.dust_frame_index)]
 
             if self.facing_right:
-                pos = self.rect.bottomleft - pygame.math.Vector2(6,10)
+                pos = self.rect.bottomleft - pygame.math.Vector2(6, 10)
                 self.display_surface.blit(dust_particle,pos)
             else:
                 pos = self.rect.bottomright - pygame.math.Vector2(6, 10)
